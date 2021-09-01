@@ -79,7 +79,7 @@ public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용
 - 앙상블(Ensemble)
 - 신경망(Neural Networks)
 
-####**비지도 학습**  
+#### **비지도 학습**  
 - 비지도 학습 알고리즘은 크게 **클러스터링(Clustering), 차원 축소(Dimensionality Reductino), 연관 규칙(Association Rules)으로 구분**  
 - 클러스터링은 공간상에서 서로 가깝고 유사한 데이터를 클러스터로 그룹화  
 - 차원 축소는 고차원의 데이터에 대해서 너무 많은 정보를 잃지 않으면서 데이터를 축소시키는 방법  
@@ -99,12 +99,12 @@ public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용
   - Apriori  
   - Eclat  
  
-####**준지도 학습(Semi-supervised Learning)**  
+#### **준지도 학습(Semi-supervised Learning)**  
 - 레이블이 있는 것과 없는 것이 혼합된 경우 사용  
 - 일반적으로는 일부 데이터에만 레이블이 있음  
 - 준지도 학습 알고리즘은 대부분 지도 학습 알고리즘과 비지도 학습 알고리즘 조합으로 구성  
 
-####**강화 학습(Reinforcement Learning)**  
+#### **강화 학습(Reinforcement Learning)**  
 - 동적 환경과 함께 상호 작용하는 피드백 기반 학습 방법  
 - 에이전트(Agent)가 환경을 관찰하고, 행동을 실행하고, 보상(reward)또는 벌점(penality)를 받음  
 - 에이전트는 이러한 피드백을 통해 자동으로 학습하고 성능을 향상시킴  
