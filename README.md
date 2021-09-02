@@ -7,7 +7,7 @@ http://suanlab.com/youtube/bd.html 참고
 - 머신러닝 개념 영상 시청
 - 사이킷런  scikit-learn 제대로 시작하기 영상 1시간 시청
 
-## Day 1 (2021-09-01)
+## **Day 1 (2021-09-01)**
 --
 **API 란?**  
 
@@ -169,7 +169,7 @@ public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용
 
 --
 
-## **2일차 study**  
+## **2일차 study (2021-09-01)**  
 
 --
 
