@@ -166,3 +166,15 @@ public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용
 - 분류와 클러스터링을 위한 표본 데이터에 대해 알게됨  
 - 예제 데이터 세트 구조를 파악함  
 - model_selectino에 train_test_split, cross_val_score, gridSearchCV를 학습함  
+
+--
+
+## **2일차 study**  
+
+--
+
+- `preprocessing` 데이터 전처리 모듈(표준화, 정규화)방법에 대해 공부함
+- `StandardScaler` 표준화 클래스를 학습
+- `MinMaxScaler` 정규화 클래스를 학습
+- 성능 평가지표(정확도, 오차행렬, 정밀도, 재현율, F1 score, ROC 곡선 & AUC)를 학습함
+  - `accuracy_score`, `cofusion_matrix`, `precision_score`, `recall_score`, `f1_score`, `roc_curve`, `roc_auc_score`
