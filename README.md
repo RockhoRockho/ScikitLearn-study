@@ -7,8 +7,10 @@ http://suanlab.com/youtube/bd.html 참고
 - 머신러닝 개념 영상 시청
 - 사이킷런  scikit-learn 제대로 시작하기 영상 1시간 시청
 
+-----
+
 ## **Day 1 (2021-09-01)**
---
+
 **API 란?**  
 
 API를 본격적으로 알아보기 전에, 비유를 들어 쉽게 설명을 도와드리겠습니다. 여러분이 멋진 레스토랑에 있다고 가정해봅시다. 점원이 가져다준 메뉴판을 보면서 먹음직스러운 스테이크를 고르면, 점원이 주문을 받아 요리사에 요청을 할 텐데요. 그러면 요리사는 정성껏 스테이크를 만들어 점원에게 주고, 여러분은 점원이 가져다준 맛있는 음식을 먹을 수 있게 됩니다.  
@@ -51,7 +53,6 @@ API는 모든 접속을 표준화하기 때문에 기계/ 운영체제 등과 �
 API를 사용하면 많은 이점들이 있는데요. Private API를 이용할 경우, 개발자들이 애플리케이션 코드를 작성하는 방법을 표준화함으로써, 간소화되고 빠른 프로세스 처리를 가능하게 합니다. 또한, 소프트 웨어를 통합하고자 할 때는 개발자들 간의 협업을 용이하게 만들어줄 수 있죠.  
 public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용하여 브랜드 인지도를 높일 수 있습니다. 뿐만 아니라 고객 데이터베이스를 확장하여 전환율까지 높일 수 있지요.  
 
---
 
 ###**머신러닝 개념**
 
@@ -154,7 +155,7 @@ public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용
 - 테스트 세트를 이용해 여러 모델을 평가하면 테스트 세트에 과대적합됨  
 - 모델 선택을 위해 훈련 세트, 테스트 세트, 검증 세트로 구분  
 
---
+---
 
 **사이킷런**   
 
@@ -167,11 +168,11 @@ public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용
 - 예제 데이터 세트 구조를 파악함  
 - model_selectino에 train_test_split, cross_val_score, gridSearchCV를 학습함  
 
---
+------
 
 ## **2일차 study (2021-09-01)**  
 
---
+-------
 
 - `preprocessing` 데이터 전처리 모듈(표준화, 정규화)방법에 대해 공부함
 - `StandardScaler` 표준화 클래스를 학습
@@ -179,20 +180,34 @@ public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용
 - 성능 평가지표(정확도, 오차행렬, 정밀도, 재현율, F1 score, ROC 곡선 & AUC)를 학습함
   - `accuracy_score`, `cofusion_matrix`, `precision_score`, `recall_score`, `f1_score`, `roc_curve`, `roc_auc_score`
 
---
+------
 
 ## **3일차 study (2021-09-06)**
 
 선형모델 정의 학습
 - 선형 회귀(Linear Regression)학습
 
-**선형 회귀(Linear Regression)**또는 **최소제곱법(Ordinary Least Squares)**은 가장 간단한 회귀 분석을 위한 선형 모델
-* 선형 회귀는 모델의 예측과 정답 사이의 **평균제곱오차(Mean Squared Error)**를 최소화 하는 학습 파라미터 $w$를 찾음
+* 선형 모델은 과거 부터 지금 까지 널리 사용되고 연구 되고 있는 기계학습 방법
+* 선형 모델은 입력 데이터에 대한 선형 함수를 만들어 예측 수행
+
+* 회귀 분석을 위한 선형 모델은 다음과 같이 정의
+
+\begin{equation}  
+\hat{y}(w,x) = w_0 + w_1 x_1 + ... + w_p x_p  
+\end{equation}  
+
+  + $x$: 입력 데이터
+  + $w$: 모델이 학습할 파라미터
+  + $w_0$: 편향
+  + $w_1$~$w_p$: 가중치
+
+**선형 회귀(Linear Regression)** 또는 **최소제곱법(Ordinary Least Squares)** 은 가장 간단한 회귀 분석을 위한 선형 모델
+* 선형 회귀는 모델의 예측과 정답 사이의 **평균제곱오차(Mean Squared Error)** 를 최소화 하는 학습 파라미터 $w$를 찾음
 * 평균제곱오차는 아래와 같이 정의  
 
-\begin{equation}
-MSE = \frac{1}{N} \sum_{i=1}^{N}(y_i - \hat{y}_i)^2
-\end{equation}
+\begin{equation}  
+MSE = \frac{1}{N} \sum_{i=1}^{N}(y_i - \hat{y}_i)^2  
+\end{equation}  
 
   + $y$: 정답  
   + $\hat{y}$: 예측 값을 의미  
@@ -208,4 +223,4 @@ MSE = \frac{1}{N} \sum_{i=1}^{N}(y_i - \hat{y}_i)^2
 - 보스턴 주택 가격에 대한 선형 회귀 실행
 - 교차검증`cross_val_score()`, 결정 계수`r2_score()` 실행
 
---
+------
