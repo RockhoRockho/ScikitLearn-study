@@ -178,3 +178,34 @@ public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용
 - `MinMaxScaler` 정규화 클래스를 학습
 - 성능 평가지표(정확도, 오차행렬, 정밀도, 재현율, F1 score, ROC 곡선 & AUC)를 학습함
   - `accuracy_score`, `cofusion_matrix`, `precision_score`, `recall_score`, `f1_score`, `roc_curve`, `roc_auc_score`
+
+--
+
+## **3일차 study (2021-09-06)**
+
+선형모델 정의 학습
+- 선형 회귀(Linear Regression)학습
+
+**선형 회귀(Linear Regression)**또는 **최소제곱법(Ordinary Least Squares)**은 가장 간단한 회귀 분석을 위한 선형 모델
+* 선형 회귀는 모델의 예측과 정답 사이의 **평균제곱오차(Mean Squared Error)**를 최소화 하는 학습 파라미터 $w$를 찾음
+* 평균제곱오차는 아래와 같이 정의  
+
+\begin{equation}
+MSE = \frac{1}{N} \sum_{i=1}^{N}(y_i - \hat{y}_i)^2
+\end{equation}
+
+  + $y$: 정답  
+  + $\hat{y}$: 예측 값을 의미  
+
+* 선형 회귀 모델에서 사용하는 다양한 오류 측정 방법  
+  + MAE(Mean Absoulte Error)  
+  + MAPE(Mean Absolute Percentage Error)  
+  + MSE(Mean Squared Error)  
+  + MPE(Mean Percentage Error)
+  
+보스턴 주택가격 데이터
+- `pairplot()`실행
+- 보스턴 주택 가격에 대한 선형 회귀 실행
+- 교차검증`cross_val_score()`, 결정 계수`r2_score()` 실행
+
+--
