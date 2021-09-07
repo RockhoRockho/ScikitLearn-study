@@ -224,3 +224,135 @@ MSE = \frac{1}{N} \sum_{i=1}^{N}(y_i - \hat{y}_i)^2
 - 교차검증`cross_val_score()`, 결정 계수`r2_score()` 실행
 
 ------
+
+## **4일차 study (2021-09-07)**
+
+------
+
+캘리포니아 주택 가격에 대한 선형회기 실행
+- `pairplot()`실행
+- 주택 가격에 대한 선형 회귀 실행
+- 교차검증`cross_val_score()`, 결정 계수`r2_score()` 실행
+
+## 보스턴, 캘리포니아 주택 가격에 대한 선형모델학습
+
+
+### 릿지회귀(Ridge)
+
+  - from sklearn.linear_model import Ridge
+  - from sklearn.model_selection import train_test_split
+  - from sklearn.datasets import load_boston
+  - from sklearn.datasets import fetch_california_housing
+
+* 릿지 회귀는 선형 회귀를 개선한 선형 모델
+* 릿지 회귀는 선형 회귀와 비슷하지만, 가중치의 절대값을 최대한 작게 만든다는 것이 다름
+* 이러한 방법은 각각의 특성(feature)이 출력 값에 주는 영향을 최소한으로 만들도록 규제(regularization)를 거는 것
+* 규제를 사용하면 다중공선성(multicollinearity) 문제를 방지하기 때문에 모델의 과대적합을 막을 수 있게 됨
+* 다중공선성 문제는 두 특성이 일치에 가까울 정도로 관련성(상관관계)이 높을 경우 발생
+* 릿지 회귀는 다음과 같은 함수를 최소화 하는 파라미터 $w$를 찾음
+
+\begin{equation}
+RidgeMSE = \frac{1}{N} \sum_{i=1}^{N}(y_i - \hat{y}_i)^2 + \alpha \sum_{i=1}^{p} w_i^2
+\end{equation}
+
+  + $\alpha$: 사용자가 지정하는 매개변수
+  * $\alpha$가 크면 규제의 효과가 커지고, $\alpha$가 작으면 규제의 효과가 작아짐
+
+* 릿지 회귀는 가중치에 제약을 두기 때문에 선형 회귀 모델보다 훈련 데이터 점수가 낮을 수 있음
+* 일반화 성능은 릿지 회귀가 더 높기 때문에 평가 데이터 점수는 릿지 회귀가 더 좋음
+
+* 일반화 성능에 영향을 주는 매개 변수인 $\alpha$ 값을 조정해 보면서 릿지 회귀 분석의 성능이 어떻게 변하는지 확인 필요
+
+
+### 라쏘 회귀(Lasso Regression)
+
+  - from sklearn.linear_model import Lasso
+  - from sklearn.model_selection import train_test_split
+  - from sklearn.datasets import load_boston
+  - from sklearn.datasets import fetch_california_housing
+
+* 선형 회귀에 규제를 적용한 또 다른 모델로 라쏘 회귀가 있음
+* 라쏘 회귀는 릿지 회귀와 비슷하게 가중치를 0에 가깝게 만들지만, 조금 다른 방식을 사용
+
+* 라쏘 회귀에서는 다음과 같은 함수를 최소화 하는 파라미터 $w$를 찾음
+
+\begin{equation}
+LassoMSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i)^2 + \alpha \sum_{i=1}^{p} |w_i|
+\end{equation}
+
+* 라쏘 회귀도 매개변수인 $\alpha$ 값을 통해 규제의 강도 조절 가능
+
+
+### 신축망 (Elastic-Net)
+
+  - from sklearn.linear_model import ElasticNet
+  - from sklearn.model_selection import train_test_split
+  - from sklearn.datasets import load_boston
+  - from sklearn.datasets import fetch_california_housing
+
+* 신축망은 릿지 회귀와 라쏘 회귀, 두 모델의 모든 규제를 사용하는 선형 모델
+* 두 모델의 장점을 모두 갖고 있기 때문에 좋은 성능을 보임
+* 데이터 특성이 많거나 서로 상관 관계가 높은 특성이 존재 할 때 위의 두 모델보다 좋은 성능을 보여 줌
+
+* 신축망은 다음과 같은 함수를 최소화 하는 파라미터 $w$를 찾음
+
+\begin{equation}
+ElasticMSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i) + \alpha \rho \sum_{i=1}^{p} |w_i| + \alpha (1 - \rho) \sum_{i=1}^{p} w_i^2
+\end{equation}
+
+  + $\alpha$: 규제의 강도를 조절하는 매개변수
+  + $\rho$: 라쏘 규제와 릿지 규제 사이의 가중치를 조절하는 매개변수
+
+
+### 직교 정합 추구 (Orthogonal Matching Pursuit)
+
+  - from sklearn.linear_model import OrthogonalMatchingPursuit
+  - from sklearn.model_selection import train_test_split
+  - from sklearn.datasets import load_boston
+  - from sklearn.datasets import fetch_california_housing
+
+* 직교 정합 추구 방법은 모델에 존재하는 가중치 벡터에 특별한 제약을 거는 방법
+
+* 직교 정합 추구 방법은 다음을 만족하는 파라미터 $w$를 찾는것이 목표
+
+\begin{equation}
+\underset{w}{\arg \min} \; ||y - \hat{y}||^2_2 \; subject \; to \; ||w||_0 \leq k
+\end{equation}
+
+  + $||w||_0$: 가중치 벡터 $w$에서 0이 아닌 값의 개수
+
+* 직교 정합 추구 방법은 가중치 벡터 $w$에서 0이 아닌 값이 $k$개 이하가 되도록 훈련됨
+* 이러한 방법은 모델이 필요 없는 데이터 특성을 훈련 과정에서 자동으로 제거 하도록 만들 수 있음
+
+* 직교 정합 추구 방법은 위에서 설명한 제약 조건 대신에 다음 조건을 만족하도록 변경 가능
+
+\begin{equation}
+\underset{w}{\arg \min} \; ||w||_0 \; subject \; to \; ||y - \hat{y}||^2_2 \leq tol
+\end{equation}
+
+  + $||y - \hat{y}||^2_2$는 $\sum_{i=1}^N (y - \hat{y})^2$와 같은 의미
+
+* 위의 식을 통해서 직교 정합 추구 방법을 $y$와 $\hat{y}$ 사이의 오차 제곱 합을 $tol$ 이하로 하면서 $||w||_0$를 최소로 하는 모델로 대체 가능
+
+
+### 다항 회귀 (Polynomial Regression)
+
+  - from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+  - from sklearn.linear_model import LinearRegression
+  - from sklearn.pipeline import make_pipeline
+  - from sklearn.model_selection import train_test_split
+  - from sklearn.datasets import load_boston
+  - from sklearn.datasets import fetch_california_housing
+
+* 입력 데이터를 비선형 변환 후 사용하는 방법
+* 모델 자체는 선형 모델
+
+\begin{equation}
+\hat{y} = w_1 x_1 + w_2 x_2 + w_3 x_3 + w_4 x_1^2 + w_5 x_2^2
+\end{equation}
+
+* 차수가 높아질수록 더 복잡한 데이터 학습 가능
+
+![polynomial regression](https://scikit-learn.org/stable/_images/sphx_glr_plot_polynomial_interpolation_0011.png)
+
+------
