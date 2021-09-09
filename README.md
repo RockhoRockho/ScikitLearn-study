@@ -356,3 +356,41 @@ ElasticMSE = \frac{1}{N} \sum_{i=1}^{N} (y_i - \hat{y}_i) + \alpha \rho \sum_{i=
 ![polynomial regression](https://scikit-learn.org/stable/_images/sphx_glr_plot_polynomial_interpolation_0011.png)
 
 ------
+
+## **5일차 study (2021-09-09)**
+
+### 로지스틱 회귀(Logistic Regression)
+
+* 로지스틱 회귀는 이름에 회귀라는 단어가 들어가지만, 가능한 클래스가 2개인 이진 분류를 위한 모델  
+* 로지스틱 회귀의 예측 함수 정의  
+
+\begin{equation}  
+\sigma(x) = \frac{1}{1 + e^{-x}} \\  
+\hat{y} = \sigma(w_0 + w_1 x_1 + ... + w_p x_p)  
+\end{equation}  
+
+  + $\sigma$: 시그모이드 함수  
+  
+* 로지스틱 회귀 모델은 선형 회귀 모델에 시그모이드 함수를 적용  
+
+* 로지스틱 회귀의 학습 목표는 다음과 같은 목적 함수를 최소화 하는 파라미터 $w$를 찾는 것  
+
+\begin{equation}  
+BinaryCrossEntropy = -\frac{1}{N}\sum_{i=1}^{N}y_i\log(\hat{y}_i) + (1-y_i)\log(1-\hat{y}_i)  
+\end{equation}  
+
+- 붓꽃 데이터, 유방암 데이터로 로지스틱 회귀 실행
+
+### 확률적 경사 하강법(Stochastic Gradient Descent)
+
+* 모델을 학습 시키기 위한 간단한 방법
+* 학습 파라미터에 대한 손실 함수의 기울기를 구해 기울기가 최소화 되는 방향으로 학습
+
+\begin{equation}
+\frac{\partial L}{\partial w} = \underset{h \rightarrow 0}{lim} \frac{L(w+h) - L(w)}{h} \\
+w^{'} = w - \alpha \frac{\partial L}{\partial w}
+\end{equation}
+
+* scikit-learn에서는 선형 SGD 회귀와 SGD 분류를 지원
+
+- 붓꽃 데이터, 유방암 데이터로 SGD 분류 실행
