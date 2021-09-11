@@ -172,8 +172,6 @@ public API와 partner API 를 사용하면, 기업은 타사 데이터를 활용
 
 ## **2일차 study (2021-09-01)**  
 
--------
-
 - `preprocessing` 데이터 전처리 모듈(표준화, 정규화)방법에 대해 공부함
 - `StandardScaler` 표준화 클래스를 학습
 - `MinMaxScaler` 정규화 클래스를 학습
@@ -226,8 +224,6 @@ MSE = \frac{1}{N} \sum_{i=1}^{N}(y_i - \hat{y}_i)^2
 ------
 
 ## **4일차 study (2021-09-07)**
-
-------
 
 캘리포니아 주택 가격에 대한 선형회기 실행
 - `pairplot()`실행
@@ -394,3 +390,29 @@ w^{'} = w - \alpha \frac{\partial L}{\partial w}
 * scikit-learn에서는 선형 SGD 회귀와 SGD 분류를 지원
 
 - 붓꽃 데이터, 유방암 데이터로 SGD 분류 실행
+
+------
+
+## **5일차 study (2021-09-11)**
+
+### 서포트 벡터 머신(Support Vector Machines)
+
+* 회귀, 분류, 이상치 탐지 등에 사용되는 지도학습 방법
+* 클래스 사이의 경계에 위치한 데이터 포인트를 서포트 벡터(support vector)라고 함
+* 각 지지 벡터가 클래스 사이의 결정 경계를 구분하는데 얼마나 중요한지를 학습
+* 각 지지 벡터 사이의 마진이 가장 큰 방향으로 학습
+* 지지 벡터 까지의 거리와 지지 벡터의 중요도를 기반으로 예측을 수행
+
+![support vector machine](https://upload.wikimedia.org/wikipedia/commons/thumb/2/20/Svm_separating_hyperplanes.png/220px-Svm_separating_hyperplanes.png)
+
+* H3은 두 클래스의 점들을 제대로 분류하고 있지 않음
+* H1과 H2는 두 클래스의 점들을 분류하는데, H2가 H1보다 더 큰 마진을 갖고 분류하는 것을 확인할 수 있음
+
+- `SVM()`, `SVC()`
+
+#### 커널기법
+* 입력 데이터를 고차원 공간에 사상해서 비선형 특징을 학습할 수 있도록 확장하는 방법
+* scikit-learn에서는 Linear, Polynomial, RBF(Radial Basis Function)등 다양한 커널 기법을 지원
+- `kernel='rbf'`
+
+![kernel trick](https://scikit-learn.org/stable/_images/sphx_glr_plot_iris_svc_0011.png)
