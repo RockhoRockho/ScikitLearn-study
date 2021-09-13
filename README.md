@@ -416,3 +416,30 @@ w^{'} = w - \alpha \frac{\partial L}{\partial w}
 - `kernel='rbf'`
 
 ![kernel trick](https://scikit-learn.org/stable/_images/sphx_glr_plot_iris_svc_0011.png)
+
+-----
+
+## **6일차 study (2021-09-13)**
+
+### 최근접 이웃(K-Nearest Neighbor)
+
+* 특별한 예측 모델 없이 가장 가까운 데이터 포인트를 기반으로 예측을 수행하는 방법
+* 분류와 회귀 모두 지원
+
+![k nearest neighbor](https://upload.wikimedia.org/wikipedia/commons/thumb/e/e7/KnnClassification.svg/220px-KnnClassification.svg.png)
+
+#### K 최근접 이웃 분류
+
+* 입력 데이터 포인트와 가장 가까운 k개의 훈련 데이터 포인트가 출력
+* k개의 데이터 포인트 중 가장 많은 클래스가 예측 결과
+
+- 붓꽃 데이터, 유방암 데이터, 와인 데이터로 실행
+
+#### k 최근접 이웃 회귀
+
+* k 최근접 이웃 분류와 마찬가지로 예측에 이웃 데이터 포인트 사용
+* 이웃 데이터 포인트의 평균이 예측 결과
+
+- 보스턴 데이터, 캘리포니아 데이터
+
+----
