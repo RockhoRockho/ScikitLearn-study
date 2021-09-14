@@ -442,4 +442,83 @@ w^{'} = w - \alpha \frac{\partial L}{\partial w}
 
 - 보스턴 데이터, 캘리포니아 데이터로 실행
 
-----
+-----
+
+## **7일차 study (2021-09-14)**
+
+### 나이브 베이스 분류기(Naive Bayes Classification)
+
+* 베이즈 정리를 적용한 확률적 분류 알고리즘
+* 모든 특성들이 독립임을 가정 (naive 가정)
+* 입력 특성에 따라 3개의 분류기 존재
+  * 가우시안 나이브 베이즈 분류기
+  * 베르누이 나이브 베이즈 분류기
+  * 다항 나이브 베이즈 분류기
+
+### 나이브 베이즈 분류기의 확률 모델
+
+* 나이브 베이즈는 조건부 확률 모델
+* *N*개의 특성을 나타내는 벡터 **x**를 입력 받아 k개의 가능한 확률적 결과를 출력
+
+\begin{equation}
+p(C_k | x_1,...,x_n)
+\end{equation}
+
+* 위의 식에 베이즈 정리를 적용하면 다음과 같음
+
+\begin{equation}
+p(C_k | \textbf{x}) = \frac{p(C_k)p(\textbf{x}|C_k)}{p(\textbf{x})}
+\end{equation}
+
+* 위의 식에서 분자만이 출력 값에 영향을 받기 때문에 분모 부분을 상수로 취급할 수 있음
+
+\begin{equation}
+\begin{split}
+p(C_k | \textbf{x}) & \propto p(C_k)p(\textbf{x}|C_k) \\
+& \propto p(C_k, x_1, ..., x_n)
+\end{split}
+\end{equation}
+
+* 위의 식을 연쇄 법칙을 사용해 다음과 같이 쓸 수 있음
+
+\begin{equation}
+\begin{split}
+p(C_k, x_1, ..., x_n) & = p(C_k)p(x_1, ..., x_n | C_k) \\
+& = p(C_k)p(x_1 | C_k)p(x_2, ..., x_n | C_k, x_1) \\
+& = p(C_k)p(x_1 | C_k)p(x_2 | C_k, x_1)p(x_3, ..., x_n | C_k, x_1, x_2) \\
+& = p(C_k)p(x_1 | C_k)p(x_2 | C_k, x_1)...p(x_n | C_k, x_1, x_2, ..., x_{n-1})
+\end{split}
+\end{equation}
+
+* 나이브 베이즈 분류기는 모든 특성이 독립이라고 가정하기 때문에 위의 식을 다음과 같이 쓸 수 있음
+
+\begin{equation}
+\begin{split}
+p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
+& \propto p(C_k) \prod_{i=1}^{n} p(x_i|C_k)
+\end{split}
+\end{equation}
+
+* 위의 식을 통해 나온 값들 중 가장 큰 값을 갖는 클래스가 예측 결과
+
+\begin{equation}
+\hat{y} = \underset{k}{\arg\max} \; p(C_k) \prod_{i=1}^{n} p(x_i|C_k)
+\end{equation}
+
+- 산림토양 데이터확인, 분류, 전처리
+- 20 Newsgroup 데이터확인, 분류, 전처리
+- 벡터화(`CountVectorizer()`, `HashingVectorizer()`, `tfidfVectorizer()`)
+
+#### 가우시안 나이브 베이즈(`GaussianNB()`)
+
+* 입력 특성이 가우시안(정규) 분포를 갖는다고 가정
+
+#### 베르누이 나이브 베이즈(`BernoulliNB()`)
+
+* 입력 특성이 베르누이 분포에 의해 생성된 이진 값을 갖는 다고 가정
+
+#### 다항 나이브 베이즈(`MultinomialNB()`)
+
+* 입력 특성이 다항분포에 의해 생성된 빈도수 값을 갖는 다고 가정
+
+------
