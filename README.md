@@ -521,4 +521,27 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 
 * 입력 특성이 다항분포에 의해 생성된 빈도수 값을 갖는 다고 가정
 
+### **선형모델 복습**
+
+선형모델 정의 복습 
+- 선형 회귀(Linear Regression)학습
+
+보스턴 주택가격 데이터  
+- `pairplot()`실행
+- 보스턴 주택 가격에 대한 선형 회귀 실행
+- 교차검증`cross_val_score()`, 결정 계수`r2_score()` 실행
+
+캘리포니아 주택 가격에 대한 선형회기 실행  
+- `pairplot()`실행
+- 주택 가격에 대한 선형 회귀 실행
+- 교차검증`cross_val_score()`, 결정 계수`r2_score()` 실행
+
+릿지회귀(Ridge)복습  
+라쏘 회귀(Lasso Regression)복습  
+신축망 (Elastic-Net)복습  
+직교 정합 추구 (Orthogonal Matching Pursuit)복습  
+다항 회귀 (Polynomial Regression)복습  
+
+위 해당 모델을 따라치고 복습함
+
 ------
