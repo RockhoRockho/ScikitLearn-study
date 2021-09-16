@@ -573,3 +573,68 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 #### 회귀 - `DecisionTreeRegressor()`
 
 - 보스턴데이터, 당뇨병데이터로 결정트리회귀 실행
+
+----
+
+## **9일차 study(2021-09-16)**
+
+### 앙상블(Ensemble)
+
+* 일반화와 강건성(Robustness)을 향상시키기 위해 여러 모델의 예측 값을 결합하는 방법
+* 앙상블에는 크게 두가지 종류가 존재
+  * 평균 방법
+    * 여러개의 추정값을 독립적으로 구한뒤 평균을 취함
+    * 결합 추정값은 분산이 줄어들기 때문에 단일 추정값보다 좋은 성능을 보임
+  * 부스팅 방법
+    * 순차적으로 모델 생성
+    * 결합된 모델의 편향을 감소 시키기 위해 노력
+    * 부스팅 방법의 목표는 여러개의 약한 모델들을 결합해 하나의 강력한 앙상블 모델을 구축하는 것
+
+#### Bagging meta-estimator
+
+* bagging은 bootstrap aggregating의 줄임말
+* 원래 훈련 데이터셋의 일부를 사용해 여러 모델을 훈련
+* 각각의 결과를 결합해 최종 결과를 생성
+* 분산을 줄이고 과적합을 막음
+* 강력하고 복잡한 모델에서 잘 동작
+
+- bagging을 사용한 분류
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `KNeighborsClassifier()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `SVC()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `DecisionTreeClassifier()`을 이용
+
+- bagging을 사용한 회귀
+ - 보스턴데이터, 당뇨병데이터에 `KNeighborsRegressor()`을 이용
+ - 보스턴데이터, 당뇨병데이터에 `SVR()`을 이용
+ - 보스턴데이터, 당뇨병암데이터에 `DecisionTreeRegressor()`을 이용
+
+#### Forests of randomized trees
+
+* `sklearn.ensemble` 모듈에는 무작위 결정 트리를 기반으로하는 두 개의 평균화 알고리즘이 존재
+  * Random Forest
+  * Extra-Trees
+* 모델 구성에 임의성을 추가해 다양한 모델 집합이 생성
+* 앙상블 모델의 예측은 각 모델의 평균
+
+- Random Forests을 사용한 분류
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `KNeighborsClassifier()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `SVC()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `DecisionTreeClassifier()`을 이용
+
+- Random Forests을 사용한 회귀
+ - 보스턴데이터, 당뇨병데이터에 `KNeighborsRegressor()`을 이용
+ - 보스턴데이터, 당뇨병데이터에 `SVR()`을 이용
+ - 보스턴데이터, 당뇨병암데이터에 `DecisionTreeRegressor()`을 이용
+
+- Extremely Randomized Tree 분류
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `KNeighborsClassifier()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `SVC()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `DecisionTreeClassifier()`을 이용
+
+- Extremely Randomized Tree 회귀
+ - 보스턴데이터, 당뇨병데이터에 `KNeighborsRegressor()`을 이용
+ - 보스턴데이터, 당뇨병데이터에 `SVR()`을 이용
+ - 보스턴데이터, 당뇨병암데이터에 `DecisionTreeRegressor()`을 이용
+
+- Random Forest, Extra Tree 시각화
+ - 결정 트리, Random Forest, Extra Tree의 결정 경계와 회귀식 시각화
