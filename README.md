@@ -638,3 +638,63 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 
 - Random Forest, Extra Tree 시각화
  - 결정 트리, Random Forest, Extra Tree의 결정 경계와 회귀식 시각화
+
+
+## **10일차 study(2021-09-17)**
+
+### AdaBoost
+
+* 대표적인 부스팅 알고리즘
+* 일련의 약한 모델들을 학습
+* 수정된 버전의 데이터를 반복 학습 (가중치가 적용된)
+* 가중치 투표(또는 합)을 통해 각 모델의 예측 값을 결합
+* 첫 단계에서는 원본 데이터를 학습하고 연속적인 반복마다 개별 샘플에 대한 가중치가 수정되고 다시 모델이 학습
+  * 잘못 예측된 샘플은 가중치 증가, 올바르게 예측된 샘플은 가중치 감소
+  * 각각의 약한 모델들은 예측하기 어려운 샘플에 집중하게 됨
+
+![AdaBoost](https://scikit-learn.org/stable/_images/sphx_glr_plot_adaboost_hastie_10_2_0011.png)
+
+- Adaboost을 사용한 분류
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `KNeighborsClassifier()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `SVC()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `DecisionTreeClassifier()`을 이용
+
+- Adaboost을 사용한 회귀
+ - 보스턴데이터, 당뇨병데이터에 `KNeighborsRegressor()`을 이용
+ - 보스턴데이터, 당뇨병데이터에 `SVR()`을 이용
+ - 보스턴데이터, 당뇨병암데이터에 `DecisionTreeRegressor()`을 이용
+
+### Gradient Tree Boosting
+
+* 임의의 차별화 가능한 손실함수로 일반화한 부스팅 알고리즘
+* 웹 검색, 분류 및 회귀 등 다양한 분야에서 모두 사용 가능
+
+- Gradient Tree Boosting을 사용한 분류
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `KNeighborsClassifier()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `SVC()`을 이용
+ - 붓꽃데이터, 와인데이터, 유방암데이터에 `DecisionTreeClassifier()`을 이용
+
+- Gradient Tree Boosting을 사용한 회귀
+ - 보스턴데이터, 당뇨병데이터에 `KNeighborsRegressor()`을 이용
+ - 보스턴데이터, 당뇨병데이터에 `SVR()`을 이용
+ - 보스턴데이터, 당뇨병암데이터에 `DecisionTreeRegressor()`을 이용
+
+### 투표 기반 분류 (Voting Classifier)
+
+* 서로 다른 모델들의 결과를 투표를 통해 결합
+* 두가지 방법으로 투표 가능
+  * 가장 많이 예측된 클래스를 정답으로 채택 (hard voting)
+  * 예측된 확률의 가중치 평균 (soft voting)
+* 결정경계 시각화 실행
+
+### 투표 기반 회귀 (Voting Regressor)
+
+* 서로 다른 모델의 예측 값의 평균을 사용
+* 회귀식 시각화 실행
+
+### 스택 일반화 (Stacked Generalization)
+
+* 각 모델의 예측 값을 최종 모델의 입력으로 사용
+* 모델의 편향을 줄이는데 효과적
+
+- 스택 회귀, 분류 시각화 
