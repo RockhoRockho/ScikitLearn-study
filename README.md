@@ -763,3 +763,11 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 - Spectral Clustering 손글씨 데이터 군집화
 - Hierarchical Clustering 손글씨 데이터 군집화
 - Birch 손글씨 데이터 군집화
+
+-----
+
+### 서포트 벡터머신 이론학습
+
+- SVM, SVR을 이용하여 회귀모델(boston), 분류모델(breast_cancer) 학습
+- Linear, Polynomial, RBF를 이용하여 학습
+- 매개변수 튜닝, 데이터 전처리 파악
