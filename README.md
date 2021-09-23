@@ -706,3 +706,60 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 - 확률적 하강 경사법
  - 붓꽃데이터 선형회귀 학습
  - 붓꽃, 유방암 데이터 선형분류 학습
+
+------
+
+## **11일차 study(2021-09-23)**
+
+### 군집화(Clustering) 이론 학습
+
+* 대표적인 비지도학습 알고리즘
+* 레이블이 없는 데이터를 그룹화 하는 알고리즘
+
+![clustering](https://scikit-learn.org/stable/_images/sphx_glr_plot_cluster_comparison_0011.png)
+
+### K-평균 (K-Means) 이론 학습
+
+* n개의 등분산 그룹으로 군집화
+* 제곱합 함수를 최소화
+* 군집화 개수를 지정해야 한다.
+* 각 군집 $C$의 평균 $\mu_j$을 중심점 이라고 함
+* 다음을 만족하는 중심점을 찾는것이 목표
+
+\begin{equation}
+\sum_{i=0}^{n} \underset{\mu_j \in C}{\min} (||x_i - \mu_j||^2)
+\end{equation}
+
+### 미니 배치 K-평균 (Mini Batch K-Means) 이론 학습
+
+* 배치 처리를 통해 계산 시간을 줄인 K-평균
+* K-평균과 다른 결과가 나올 수 있다.
+
+### Affinity Propagation 이론 학습
+
+* 샘플 쌍 끼리 메시지를 보내 군집을 생성
+* 샘플을 대표하는 적절한 예를 찾을 때까지 반복
+* 군집의 갯수를 자동으로 정함
+
+![affinity propagation](https://scikit-learn.org/stable/_images/sphx_glr_plot_affinity_propagation_0011.png)
+
+### Mean Shift 이론 학습
+
+* 중심점 후보를 정해진 구역 내 평균으로 업데이트
+
+### 스펙트럼 군집화 (Spectral Clustering) 이론 학습
+
+### 계층 군집화 (Hierarchical Clustering) 이론 학습
+
+### DBSCAN (Density-Based Spatial Clustering of Applications with Noise) 이론 학습
+
+### OPTICS (Ordering Points To Identify the Clustering Structure) 이론 학습
+
+### Birch (Balanced iterative reducing and clustering using hierarchies) 이론 학습
+
+### 손글씨 데이터 군집화 이론 학습
+
+- K-Mean 손글씨 데이터 군집화
+- Spectral Clustering 손글씨 데이터 군집화
+- Hierarchical Clustering 손글씨 데이터 군집화
+- Birch 손글씨 데이터 군집화
