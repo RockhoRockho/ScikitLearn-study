@@ -835,3 +835,7 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 * 기계학습 모델의 입력으로 사용했을때 성능향상을 기대할 수 있음
 
 - 원본데이터 사용과 정제된 데이터 사용함으로 `KNeighborsClassifier`, `SVC`, `DecisionTreeClassifier`, `RandomForestClassifier` 
+
+## 서포트 벡터머신 복습 2
+
+- 유방암, 붓꽃, 와인데이터로 Linear SVC, kernel SVC 실행
