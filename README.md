@@ -771,3 +771,66 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 - SVM, SVR을 이용하여 회귀모델(boston), 분류모델(breast_cancer) 학습
 - Linear, Polynomial, RBF를 이용하여 학습
 - 매개변수 튜닝, 데이터 전처리 파악
+
+------
+
+## **12일차 study(2021-09-24)**
+
+### 다양체 학습 (Manifold Learning)
+
+* 높은 차원의 데이터를 저차원으로 축소하는 방법
+
+![manifold](https://scikit-learn.org/stable/_images/sphx_glr_plot_compare_methods_0011.png)
+
+* 고차원 데이터를 2차원 또는 3차원으로 축소해 시각화에 활용할 수 있음
+* 차원 축소 과정에서 중요하지 않은 정보는 버려지고 중요한 정보만 남기 때문에 데이터 정제에 활용 가능
+
+### Locally Linear Embedding (LLE)
+
+* 국소 이웃 거리를 보존하는 저차원 임베딩을 찾음
+
+### Local Tangent Space Alignment (LTSA)
+
+* 탄젠트 공간을 통해 각 이웃의 국소 성질을 특성화
+* 국소 탄젠트 공간을 정렬
+
+### Hessian Eigenmapping
+
+* LLE의 문제를 해결한 다른 방법
+* 국소 선형 구조를 복원하기 위해 각 이웃에서 hessian 기반의 이차 형태를 중심으로 회전
+
+### Modified Locally Linear Embedding
+
+* 각 이웃에 여러 가중치 벡터를 사용
+* n_neighbors > n_components를 만족해야 함
+
+### Isomap
+
+* 초기의 다양체 학습 알고리즘
+* MDS와 커널 PCA의 확장으로 볼 수 있음
+* 모든 점들 사이의 측지 거리를 유지하는 저차원 임베딩을 찾음
+
+### Multi-Dimensional Scaling (MDS)
+
+* 고차원 공간에서의 거리를 고려하는 저차원 공간을 찾음
+
+### Spectral Embedding
+
+* 스펙트럼 분해를 통해 데이터의 저차원 표현을 찾음
+* 데이터의 점이 저차원 공간에서도 서로 가깝게 유지되도록 함
+
+### t-distributed Stochastic Neighbor Embedding (t-SNE)
+
+* 데이터 포인트의 유사성을 확률로 변환
+* 국소 구조에 민감
+* 국소 구조를 기반으로 샘플 그룹을 추출하는데 강함
+* 항상 KL발산의 국소 최소값에서 끝남
+* 계산 비용이 많이 듬
+* 전역 구조를 보존하지 않음
+
+### 정제된 표현을 이용한 학습
+* 다양체 학습의 결과를 정제된 데이터로 생각할 수 있음
+* 정제된 표현이기 때문에 분석에 비교적 용이함
+* 기계학습 모델의 입력으로 사용했을때 성능향상을 기대할 수 있음
+
+- 원본데이터 사용과 정제된 데이터 사용함으로 `KNeighborsClassifier`, `SVC`, `DecisionTreeClassifier`, `RandomForestClassifier` 
