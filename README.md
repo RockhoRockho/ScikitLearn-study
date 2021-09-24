@@ -785,41 +785,41 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 * 고차원 데이터를 2차원 또는 3차원으로 축소해 시각화에 활용할 수 있음
 * 차원 축소 과정에서 중요하지 않은 정보는 버려지고 중요한 정보만 남기 때문에 데이터 정제에 활용 가능
 
-### Locally Linear Embedding (LLE)
+### Locally Linear Embedding (LLE) 이론 학습
 
 * 국소 이웃 거리를 보존하는 저차원 임베딩을 찾음
 
-### Local Tangent Space Alignment (LTSA)
+### Local Tangent Space Alignment (LTSA) 이론 학습
 
 * 탄젠트 공간을 통해 각 이웃의 국소 성질을 특성화
 * 국소 탄젠트 공간을 정렬
 
-### Hessian Eigenmapping
+### Hessian Eigenmapping 이론 학습
 
 * LLE의 문제를 해결한 다른 방법
 * 국소 선형 구조를 복원하기 위해 각 이웃에서 hessian 기반의 이차 형태를 중심으로 회전
 
-### Modified Locally Linear Embedding
+### Modified Locally Linear Embedding 이론 학습
 
 * 각 이웃에 여러 가중치 벡터를 사용
 * n_neighbors > n_components를 만족해야 함
 
-### Isomap
+### Isomap 이론 학습
 
 * 초기의 다양체 학습 알고리즘
 * MDS와 커널 PCA의 확장으로 볼 수 있음
 * 모든 점들 사이의 측지 거리를 유지하는 저차원 임베딩을 찾음
 
-### Multi-Dimensional Scaling (MDS)
+### Multi-Dimensional Scaling (MDS) 이론 학습
 
 * 고차원 공간에서의 거리를 고려하는 저차원 공간을 찾음
 
-### Spectral Embedding
+### Spectral Embedding 이론 학습
 
 * 스펙트럼 분해를 통해 데이터의 저차원 표현을 찾음
 * 데이터의 점이 저차원 공간에서도 서로 가깝게 유지되도록 함
 
-### t-distributed Stochastic Neighbor Embedding (t-SNE)
+### t-distributed Stochastic Neighbor Embedding (t-SNE) 이론 학습
 
 * 데이터 포인트의 유사성을 확률로 변환
 * 국소 구조에 민감
@@ -829,6 +829,7 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 * 전역 구조를 보존하지 않음
 
 ### 정제된 표현을 이용한 학습
+
 * 다양체 학습의 결과를 정제된 데이터로 생각할 수 있음
 * 정제된 표현이기 때문에 분석에 비교적 용이함
 * 기계학습 모델의 입력으로 사용했을때 성능향상을 기대할 수 있음
