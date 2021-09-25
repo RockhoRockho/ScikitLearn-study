@@ -839,3 +839,82 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 ## 서포트 벡터머신 복습 2
 
 - 유방암, 붓꽃, 와인데이터로 Linear SVC, kernel SVC 실행
+
+
+------
+
+## **13일차 study(2021-09-25)**
+
+### 분해 (Decomposition)
+* 큰 하나의 행렬을 여러개의 작은 행렬로 분해
+* 분해 과정에서 중요한 정보만 남게됨
+
+### Principal Component Analysis (PCA) 이론 학습
+* PCA를 사용해 iris 데이터 변환
+* $150 \times 4$ 크기의 데이터를 $150 \times 2$ 크기의 행렬로 압축
+* PCA를 통해 학습된 각 컴포넌트 (6개)
+* 각 컴포넌트는 얼굴의 주요 특징을 나타냄
+
+### Incremental PCA 이론 학습
+
+* PCA는 SVD 알고리즘 실행을 위해 전체 학습용 데이터 셋을 메모리에 올려야 함
+* Incremental PCA는 학습 데이터를 미니 배치 단위로 나누어 사용
+* 학습 데이터가 크거나 온라인으로 PCA 적용이 필요할 때 유용
+
+### Kernel PCA 이론 학습
+
+* 차원 축소를 위한 복잡한 비선형 투형
+
+### Sparse PCA 이론 학습
+
+* PCA의 주요 단점 중 하나는 주성분들이 보통 모든 입력 변수들의 선형결합으로 나타난다는 점
+* 희소 주성분분석(Sparse PCA)는 몇 개 변수들만의 선형결합으로 주성분을 나타냄으로써 이러한 단점을 극복
+
+### Truncated Singular Value Decomposition (Truncated SVD) 이론 학습
+
+* PCA는 정방행렬에 대해서만 행렬 분해 가능
+* SVD는 정방행렬 뿐만 아니라 행과 열이 다른 행렬도 분해 가능
+* PCA는 밀집 행렬(Dense Matrix)에 대한 변환만 가능하지만, SVD는 희소 행렬(Sparse Matrix)에 대한 변환도 가능
+* 전체 행렬 크기에 대해 Full SVD를 사용하는 경우는 적음
+* 특이값이 0인 부분을 모두 제거하고 차원을 줄인 Truncated SVD를 주로 사용
+
+### Dictionary Learning 이론 학습
+
+* Sparse code를 사용하여 데이터를 가장 잘 나타내는 사전 찾기
+* Sparse coding은 overcomplete 기저벡터(basis vector)를 기반으로 데이터를 효율적으로 표현하기 위해 개발
+* 기저 벡터는 벡터 공간에 속하는 벡터의 집합이 선형 독립이고, 다른 모든 벡터 공간의 벡터들이 그 벡터 집합의 선형 조합으로 나타남
+
+### Factor Analysis
+
+* 요인 분석(Factor Analysis)은 변수들 간의 상관관계를 고려하여 저변에 내재된 개념인 요인들을 추출해내는 분석방법
+* 요인 분석은 변수들 간의 상관관계를 고려하여 서로 유사한 변수들 끼리 묶어주는 방법
+* PCA에서는 오차(error)를 고려하지 않고, 요인 분석에서는 오차(error)를 고려
+
+### Independent Component Analysis(ICA) 이론 학습
+
+* 독립 성분 분석(Independent Component Analysis, ICA)은 다변량의 신호를 통계적으로 독립적인 하부 성분으로 분리하는 계산 방법
+* ICA는 주성분을 이용하는 점은 PCA와 유사하지만, 데이터를 가장 잘 설명하는 축을 찾는 PCA와 달리 가장 독립적인 축, 독립성이 최대가 되는 벡터를 찾음
+
+### Non-negative Matrix Factorization 이론 학습
+
+* 음수 미포함 행렬 분해(Non-negative matrix factorization, NMF)는 음수를 포함하지 않은 행렬 V를 음수를 포함하지 않은 행렬 W와 H의 곱으로 분해하는 알고리즘
+
+### Latent Dirichlet Allocation (LDA) 이론 학습
+
+* 잠재 디리클레 할당은 이산 자료들에 대한 확률적 생성 모형
+* 디리클레 분포에 따라 잠재적인 의미 구조를 파악
+* 
+### Linear Discriminant Analysis (LDA) 이론 학습
+
+* LDA는 PCA와 유사하게 입력 데이터 세트를 저차원 공간에 투영해 차원을 축소
+* LDA는 지도학습 분류에서 사용하기 쉽도록 개별 클래스르 분별할 수 있는 기준을 최대한 유지하면서 차원 축소
+
+### 압축된 표현을 사용한 학습
+* 행렬 분해를 통해 압축된 데이터를 사용해 학습
+- knn, svm, decision-tree, Random-forest
+
+### 복원된 표현을 사용한 학습
+* 분해 후 복원된 행렬을 사용해 학습
+- knn, svm, decision-tree, Random-forest
+
+### 이미지 복원 학습
