@@ -918,3 +918,24 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 - knn, svm, decision-tree, Random-forest
 
 ### 이미지 복원 학습
+
+------
+
+## **14일차 study(2021-09-27)**
+
+### XGBoost
+
+* 트리 기반의 앙상블 기법
+* 분류에 있어서 다른 알고리즘보다 좋은 예측 성능을 보여줌
+* XGBoost는 GBM 기반이지만, GBM의 단점인 느린 수행 시간과 과적합 규제 부재 등의 문제를 해결
+* 병렬 CPU 환경에서 빠르게 학습 가능
+
+- XGBClassifier(붓꽃, 와인, 유방암데이터), XGBRegressor(보스턴, 당뇨병데이터) 실행
+
+### LightGBM
+
+* 빠른 학습과 예측 시간
+* 더 적은 메모리 사용
+* 범주형 특징의 자동 변환과 최적 분할
+
+- LGBClassifier(붓꽃, 와인, 유방암데이터), LGBRegressor(보스턴, 당뇨병데이터) 실행
