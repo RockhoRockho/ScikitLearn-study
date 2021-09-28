@@ -230,7 +230,7 @@ MSE = \frac{1}{N} \sum_{i=1}^{N}(y_i - \hat{y}_i)^2
 - 주택 가격에 대한 선형 회귀 실행
 - 교차검증`cross_val_score()`, 결정 계수`r2_score()` 실행
 
-## 보스턴, 캘리포니아 주택 가격에 대한 선형모델학습
+- 보스턴, 캘리포니아 주택 가격에 대한 선형모델학습
 
 
 ### 릿지회귀(Ridge)
@@ -548,7 +548,7 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 
 ## **8일차 study (2021-09-15)**
 
-#### 결정 트리(Decision Tree)
+### 결정 트리(Decision Tree)
 
 * 분류와 회귀에 사용되는 지도 학습 방법
 * 데이터 특성으로 부터 추론된 결정 규칙을 통해 값을 예측
@@ -561,7 +561,7 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
   * 수치형과 범주형 데이터 모두를 다룰 수 있다
   * ...
 
-#### 분류 - `DecisionTreeClassifier()`
+### 분류 - `DecisionTreeClassifier()`
 
 * `DecisionTreeClassifier`는 분류를 위한 결정트리 모델
 * 두개의 배열 X, y를 입력 받음
@@ -570,7 +570,7 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 
 - 붓꽃데이터, 와인데이터, 유방암데이터로 결정트리 실행
 
-#### 회귀 - `DecisionTreeRegressor()`
+### 회귀 - `DecisionTreeRegressor()`
 
 - 보스턴데이터, 당뇨병데이터로 결정트리회귀 실행
 
@@ -699,7 +699,7 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 
 - 스택 회귀, 분류 시각화 
 
-## Sci study 로지스틱 회귀 복습
+### Sci study 로지스틱 회귀 복습
 
 - 로지스틱 회귀 예제 따라 치기
 - 붓꽃, 유방암 데이터 확인 및 로지스틱 회귀
