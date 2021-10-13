@@ -1056,3 +1056,34 @@ z = (x - 유) / s
   - graphviz를 사용한 시각화는 현재 계속 utf-8 에러가 떠서 진행이 어려움
   - 가우시안 나이브 베이즈 학습 및 평가 시각화
   -  결정 경계 시각화, 하이퍼파리미터를 변경해 보면서 결정 경계의 변화 확인
+
+------- 
+## **18일차 study(2021-10-13)**
+
+- Bagging meta-estimator
+ - 붓꽃, 와인, 유방암데이터로 분류(KNN, SVC, Decision Tree)
+ - 보스턴, 당뇨병 데이터로 회귀(KNN, SVR, Decision Tree)
+
+- Random Forests
+ - 붓꽃, 와인, 유방암데이터로 분류
+ - 보스턴, 당뇨병 데이터로 회귀
+ - 시각화
+
+- Extremely Randomized Trees
+ - 붓꽃, 와인, 유방암데이터로 분류
+ - 보스턴, 당뇨병 데이터로 회귀
+ - 시각화
+
+- Adaboost, Graidient Tree Boosting
+ - 붓꽃, 와인, 유방암데이터로 분류
+ - 보스턴, 당뇨병 데이터로 회귀
+
+- Voting Classifier, Regressor
+ - 붓꽃데이터로 분류(SVC, GaussianNB, RandomForestClassifier)
+  - 결정경계시각화(DecisionTree Classifier, KNeighborsClassifier)
+ - 보스턴데이터로 회귀(LinearRegression, GradientBoostingRegressor, RandomForestRegressor)
+  - 회귀식 시각화
+
+- Stack Generalization
+ - 붓꽃 데이터로 분류(LogisticRegression, SVC, GaussianNB, RandomForestClassifier) 및 결
+ - 보스턴 데이터로 회귀(Ridge, Lasso, SVR, GradientBoostingRegressor) 및 시각화
