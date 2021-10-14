@@ -1087,3 +1087,9 @@ z = (x - 유) / s
 - Stack Generalization
  - 붓꽃 데이터로 분류(LogisticRegression, SVC, GaussianNB, RandomForestClassifier) 및 결
  - 보스턴 데이터로 회귀(Ridge, Lasso, SVR, GradientBoostingRegressor) 및 시각화
+
+------- 
+## **19일차 study(2021-10-14)**
+
+- 군집화 데이터 생성 후 (k-평균, 미니 배치 k-평균, Affinity Propagation, Mean Shift, 스펙트럼 군집화, 계층 군집화, DBSCAN, OPTICS, Birch) 실시
+- 손글씨 데이터 군집화 실시(k-평균, 스펙트럼 군집화, 계층군집화, Birch)
