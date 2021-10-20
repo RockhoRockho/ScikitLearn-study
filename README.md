@@ -1093,3 +1093,9 @@ z = (x - 유) / s
 
 - 군집화 데이터 생성 후 (k-평균, 미니 배치 k-평균, Affinity Propagation, Mean Shift, 스펙트럼 군집화, 계층 군집화, DBSCAN, OPTICS, Birch) 실시
 - 손글씨 데이터 군집화 실시(k-평균, 스펙트럼 군집화, 계층군집화, Birch)
+
+------- 
+## **20일차 study(2021-10-20)**
+- `plt.cm.Spectral`, `plt.cm.Set` : matplotlib의 cmap 종류를 불러오기(스펙트럼, 종류1번)
+- `view_init` : 3차원 도형의 시각변경
+- `random_projection.SparseRandomProjection` : 무작위 차원 
