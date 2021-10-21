@@ -1014,7 +1014,7 @@ p(C_k, x_1, ..., x_n) & \propto p(C_k)p(x_1|C_k)p(x_2|C_k)...p(x_n|C_k) \\
 
 ## **15일차 study(2021-09-30)**
 
-최근접 이웃 복습
+**최근접 이웃 복습**  
 * n_jobs = 정수
 * multiprocessing.cpu_count()<br> 시스템의 CPU 수를 반환합니다. <br> 이 숫자는 현재 프로세스에서 사용할 수 있는 CPU 수와 같지 않습니다. 사용 가능한 CPU 수는 len(os.sched_getaffinity(0)) 로 얻을 수 있습니다.
 * aram_grid 사전 또는 사전 목록<br> 매개변수 이름( str)을 키로 사용하는 사전 및 값으로 시도할 매개변수 설정 목록 또는 이러한 사전 목록(이 경우 목록의 각 사전에 걸쳐 있는 그리드가 탐색됨). 이를 통해 매개변수 설정의 모든 순서를 검색할 수 있습니다.
@@ -1041,7 +1041,7 @@ z = (x - 유) / s
 
 ## **16일차 study(2021-10-01)**
 
-- 나이브 베이스 전체 복습
+**나이브 베이스 전체 복습**  
 - 학습, 평가 데이터분류(백터화 종류 3가지(`countVectorizer`, `HashingVectorizer`, `TdifVectorizer`) -> 전처리 과정 복습
 - 가우시안 나이브 베이즈 학습 및 평가 시각화
 -  나이브 베이즈 학습 및 평가 시각화
@@ -1050,7 +1050,7 @@ z = (x - 유) / s
 ------- 
 ## **17일차 study(2021-10-06)**
 
-- 결정트리 복습
+**결정트리 복습**  
  - `DeicisionTreeClassifier`(붓꽃, 와인, 유방암데이터), `DecisionTreeRegressor`(보스턴, 당뇨병데이터)학습
   - 전처리 없이 학습/전처리 후 학습, 학습된 결정트리 시각화, 텍스트를 통한 시각화, plot_tree를 사용한 시각화복습
   - graphviz를 사용한 시각화는 현재 계속 utf-8 에러가 떠서 진행이 어려움
@@ -1091,13 +1091,14 @@ z = (x - 유) / s
 ------- 
 ## **19일차 study(2021-10-14)**
 
+**군집화 복습**  
 - 군집화 데이터 생성 후 (k-평균, 미니 배치 k-평균, Affinity Propagation, Mean Shift, 스펙트럼 군집화, 계층 군집화, DBSCAN, OPTICS, Birch) 실시
 - 손글씨 데이터 군집화 실시(k-평균, 스펙트럼 군집화, 계층군집화, Birch)
 
 ------- 
 ## **20일차 study(2021-10-20)**
 
-다양체 
+**다양체 복습**  
 - `plt.cm.Spectral`, `plt.cm.Set` : matplotlib의 cmap 종류를 불러오기(스펙트럼, 종류1번)
 - `view_init` : 3차원 도형의 시각변경
 - `random_projection.SparseRandomProjection` : 무작위 차원 
@@ -1105,5 +1106,5 @@ z = (x - 유) / s
 ------- 
 ## **21일차 study(2021-10-21)**
 
-분해 부분 복습
+**분해 복습**  
 - jupyter notebook에서 실행이 불가한 matrix 곱부분 nmf를 이용한 이미지 복원 출력 가능
