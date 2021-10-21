@@ -1099,3 +1099,7 @@ z = (x - 유) / s
 - `plt.cm.Spectral`, `plt.cm.Set` : matplotlib의 cmap 종류를 불러오기(스펙트럼, 종류1번)
 - `view_init` : 3차원 도형의 시각변경
 - `random_projection.SparseRandomProjection` : 무작위 차원 
+
+------- 
+## **21일차 study(2021-10-21)**
+- jupyter notebook에서 실행이 불가한 matrix 곱부분 nmf를 이용한 이미지 복원 출력 가능
