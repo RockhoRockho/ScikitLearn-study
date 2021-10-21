@@ -1060,6 +1060,7 @@ z = (x - 유) / s
 ------- 
 ## **18일차 study(2021-10-13)**
 
+**앙상블 복습**  
 - Bagging meta-estimator
  - 붓꽃, 와인, 유방암데이터로 분류(KNN, SVC, Decision Tree)
  - 보스턴, 당뇨병 데이터로 회귀(KNN, SVR, Decision Tree)
