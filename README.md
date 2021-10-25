@@ -1115,3 +1115,10 @@ z = (x - 유) / s
 
 **추천시스템 복습**
 - 코드가 잘 이해가 되질 않아 많이 부족
+
+## **23일차 study(2021-10-25)**
+
+**XGBOOST 복습**
+- 데이터 가져오기
+- 데이터 전처리(`XGBClassifier`, `XGBRegressor` `LGBMClassifier`, `LGBMRegressor`)
+- XGB 데이터 시각화
