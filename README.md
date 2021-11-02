@@ -1122,3 +1122,59 @@ z = (x - 유) / s
 - 데이터 가져오기
 - 데이터 전처리(`XGBClassifier`, `XGBRegressor` `LGBMClassifier`, `LGBMRegressor`)
 - XGB 데이터 시각화
+
+## **24일차 study(2021-11-02)
+
+### Feature Engineering
+- 머신러닝 알고리즘을 작동하기 위해 데이터에 대한 도메인 지식을 확용하여 특징을 만들어내는 과정
+- 모델의 성능을 높이기 위해 모델에 입력할 데이터를 만들기 위해 주어진 초기 데이터부터 특징을 가공하고 생성하는 전체 과정을 의미
+- Feature Engineering은 모델 성능에 미치는 영향이 크기 때문에 머신러닝 응용에 있어 굉장히 중요한 단계이며, 전문성과 시간과 비용이 많이 드는 작업
+
+ - 특징선택
+ - 차원축소
+ - 특징생성
+
+### 에러분석
+- Start with larger errors: 모델을 통해 나온 모든 값을 확인하기 보다 '에러'값이 큰 feature부터 확인하는 방법
+- Segment By classes: 평균 에러값을 기준으로 Segment를 나누어 비교하면서 분석하는 방법
+- Unsupervised clustering: 패턴을 발견하는데 어려움이 있을 경우 비지도학습인 clustering 알고리즘을 사용하여 분류되지 않은 값을을 확인하는 방법.
+- Ask colleagues or domain experts: 데이터를 통해서 발견할 수 없다면 도메인 분야 전문가의 도움을 통해 에러의 원인을 찾아낼 수도 있음.
+
+### 시각화 참고자료
+http://www.datavizcatalogue.com
+http://www.datavizproject.com
+
+- 갭마인더
+ -http://www.gapminder.org/tools/?from=world#$state$time$value=2019;;&chart-type=bubbles
+- 타블루
+ -http://www.tableau.com/ko-kr/learn/articles/data-visualization
+ 
+- 그외
+ - http://pudding.cool/2018/10/city_3d/
+ - http://www.puffpuffprojecet.com/languages.html 
+ - http://pudding.cool/2017/03/film-diaglogue/
+ - http://www.selfiecity.net/selfexploratory/
+ - http://www.washingtonpost.com/graphics/national/eclipse/
+ - http://www.aaronkoblin.com/project/flight=patterns/
+ - http://www.datakorea.datastore.or.kr
+ - http://www.d3js.org/
+
+### 시각화 디자인 원칙
+
+1. 우리뇌의 특성(출현, 구상화, 다중안정성, 불변성, 근접성, 공통영역, 유사성, 폐합, 대칭, 연속성, 공동운명)
+2. 비례 잉크의 원리: 시각화에서 음영처리된 영역의 크기는 해당 영역이 나타내는 데이터 값에 비례해야 함
+3. 시각화 방법
+ - 로그 축을 통한 시각화
+ - 직접 영역 시각화
+ - 부분 투명도 및 지터링
+ - 2D histograms
+ - 윤곽선
+4. 색 사용의 일반적인 함정
+5. 중복 코딩 범례 설계
+6. 재현성 및 반복성
+7. 내용과 디자인의 분리
+8. 스토리텔링: 데이터에 대한 통찰력을 가지고 있고, 잠재적인 청중을 가지고있으며, 통찰력을 청중들에게 전달하고자 함
+9. 일반적인 그림을 그려라: 청중들이 그림을 보고 설명하고자 하는 요점을 즉시 유추할 수 있어야 하며, 복잡한 시각화를 빠르게 처리하고 보여지는 주요 경향과 관계를 이해할 수 있어야 함.
+10. 복잡한 그림을 향해 쌓기: 때때로 많은 양의 정보를 한 번에 포함하는 더 복잡한 수치를 보여주고 싶어함
+11. 그림이 기억에 남도록 하라: 간단한 막대그래프와 같이 단순하고 깨끗한 그림은 산만함을 피하고, 읽기 쉽고, 가장 중요한 요점에 집중할 수 있는 장점이 있음.
+12. 일관성을 가지며 반복하지 마라 : 똑같은 종류의 시각화 자료를 
